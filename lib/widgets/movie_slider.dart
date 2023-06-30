@@ -42,8 +42,10 @@ class _MovieSliderState extends State<MovieSlider> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size; //CONTEXT corresponde a todo el arbol de widgets.
+
     return Container(
-      width: double.infinity,
+      width: size.height * 0.5,
       height: 260,
       //color: Colors.red,
 
@@ -67,7 +69,7 @@ class _MovieSliderState extends State<MovieSlider> {
               itemCount: widget.movies.length,
               
               itemBuilder: (BuildContext context, int i) {
-                return _MoviePoster(movie: widget.movies[i], heroId: '${ widget.title }-${ i }-${ widget.movies[i].id }');
+                return _MoviePoster(movie: widget.movies[i], heroId: '${ widget.title }-$i -${ widget.movies[i].id }');
               },
             ),
           ),
@@ -91,7 +93,7 @@ class _MoviePoster extends StatelessWidget { //Private
   @override
   Widget build(BuildContext context) {
 
-    final sizeCel = MediaQuery.of(context).size; //CONTEXT corresponde a todo el arbol de widgets.
+    //final size = MediaQuery.of(context).size; //CONTEXT corresponde a todo el arbol de widgets.
     movie.heroId = heroId;
 
     return Container(
@@ -125,7 +127,7 @@ class _MoviePoster extends StatelessWidget { //Private
 
           Text(
             movie.title,
-            maxLines: 3, //Determina la cantidad de renglones para distribuir el texto.
+            maxLines: 2, //Determina la cantidad de renglones para distribuir el texto.
             overflow: TextOverflow.ellipsis, //Indica con 3 puntos (...), que hay más texto cuando éste sobrepasa el tamaño del FadeImage.
             textAlign: TextAlign.center, //Permite centrar el texto.
           ),

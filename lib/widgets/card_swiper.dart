@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:card_swiper/card_swiper.dart';
 import 'package:peliculas/models/models.dart';
-import 'package:peliculas/screens/details_screen.dart';
+//import 'package:peliculas/screens/details_screen.dart';
 
 class CardSwiper extends StatelessWidget {
 
@@ -18,7 +18,7 @@ class CardSwiper extends StatelessWidget {
 
     final size = MediaQuery.of(context).size; //CONTEXT corresponde a todo el arbol de widgets.
 
-    if (this.movies.length == 0) {
+    if (movies.length == 0) {
       return Container(
         width: double.infinity,
         height: size.height * 0.5,
